@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root{
+    --nav-bg-color: black;
+    --nav-text-color: white;
+    --nav-padding: 1rem;
+    --font-family: 'Oswald', sans-serif;
+    
+    /* Carrusel */
+    --carousel-text-color: white;
+    --carousel-text-color-sec: rgba(206, 229, 229, 0.933);
+    --carousel-font-thin: 300;
+    --carousel-text-margin-left: 2rem; 
+    --carousel-text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+    /* Tamaños de fuente */
+    --font-size-small: 0.8rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xlarge: 2rem;
+    --font-size-xxlarge: 3rem;
+    --font-size-xxxlarge: 4rem;
+
+    /* Presentación */
+    --text-color-third: #c7a17a;
+}
+
+body{
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+nav{
+    background-color: black;
+    color: var(--nav-text-color);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: var(--nav-padding);
+    margin: 0;
+}
+
+nav ul li a{
+    color: var(--nav-text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Carrusel de img */
+
+.item-carrusel{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+    .item-carrusel span, h2, p, button{
+        margin-left: var(--carousel-text-margin-left);
+    }
+
+    .item-carrusel span, .item-carrusel h2{
+        color: var(--carousel-text-color);
+        margin-left: var(--carousel-text-margin-left);
+        text-shadow: var(--carousel-text-shadow);
+    }
+
+    .item-carrusel span{
+        font-weight: var(--carousel-font-thin);
+        font-size: var(--font-size-xlarge);
+    }
+
+    .item-carrusel h2{
+        font-size: var(--font-size-xxxlarge);
+        text-transform: uppercase;
+        margin-block: 0;
+    }
+
+    .item-carrusel p{
+        color: var(--carousel-text-color-sec);
+        font-size: var(--font-size-medium);
+    }
+
+    .item-carrusel button{        
+        color: white;
+        border: 2px solid var(--carousel-text-color);
+        background-color: #0000;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-top: 1rem;
+        font-weight: var(--carousel-font-thin);
+    }
+
+#tu-cafe-preferido{
+    background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2021/03/sidebar_cafe01_tablet_v2.jpg');
+    background-size: cover;
+    min-height: 100%;
+    font-weight: var(--carousel-font-thin);
+}
+
+#proba-capsulas{
+    background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2021/03/sidebar_capsulas04_tablet_v2.jpg');
+    background-size: cover;
+    min-height: 100%;
+}
+
+#desde-2007{
+    background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2021/03/sidebar_tostadores02_tablet.jpg');
+    background-size: cover;
+    min-height: 100%;   
+}
+
+/* Sección de productos */
+.productos{
+    padding: 2rem;
+    text-align: center;
+}
+
+    .productos h2{
+        font-size: var(--font-size-xxlarge);
+        margin-bottom: 2rem;
+        color: var(--nav-bg-color);
+    }
+
+    .productos hr{
+        width: 8rem;
+        border: 1px solid var(--text-color-third);
+        margin-bottom: 2rem;
+    }
+
+.tarjetas-productos{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+    .tarjeta-producto{
+        display: grid;
+        width: fit-content;
+        justify-content: center;
+    }
+
+    .tarjeta-producto img{
+        height: 22vh;
+    }
+
+    .tarjeta-producto a{
+        text-decoration: none;
+        margin-top: 1rem;
+        color: var(--nav-bg-color);
+    }
+    
+    .controles button{
+        background: none;
+        padding: 0;
+        min-width: 1rem;
+        min-height: 1rem;
+        border: 2px solid var(--carousel-text-color-sec);
+        border-radius: 45%;
+    }
+
+    .controles #actual{
+        background: var(--text-color-third);
+
+        border: 2px solid var(--carousel-text-color-sec);
+    }
+
+/* División de pantalla */ 
+.division-pantalla{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+    #izquierda{
+        background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2021/04/bannerpromo_cafe_02_v2.jpg');
+    }
+
+    #derecha{
+        background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2025/04/TIENDA-042400313-1-scaled-760x420.jpg');
+    }
+    
+    .item-pantalla-dividida{
+        min-height: 50vh;
+        border-radius: 8px;
+        padding-left: 2rem;
+        align-content: flex-end;
+    }
+
+    .item-pantalla-dividida span{
+        background-color: var(--carousel-text-color);
+        padding-inline: 8px;
+        padding-block: 4px;
+        color: var(--nav-bg-color);
+    }
+
+    .item-pantalla-dividida h4{
+        color: var(--carousel-text-color);
+        font-size: var(--font-size-xlarge);
+        margin-block: 0.5rem;
+    }
+
+    .item-pantalla-dividida button{
+        margin-bottom: 2rem;
+        padding: 1rem 2rem;
+        background: none;
+        border: 2px solid var(--carousel-text-color);
+        margin-left: 0;
+    }
+
+    .item-pantalla-dividida button a{
+        text-decoration: none;
+        font-size: var(--font-size-medium);
+        color: var(--carousel-text-color);
+    }

@@ -5,7 +5,7 @@
     --nav-text-color: white;
     --footer-bg-color: #111111;
     --nav-padding: 1rem;
-    --font-family: 'Oswald', sans-serif;
+    --font-family: "Oswald", sans-serif;
     
     /* Carrusel */
     --carousel-text-color: white;
@@ -27,12 +27,38 @@
     --text-color-sec: #7c7c7b;
 
     /* Transiciones */
-    --transition-speed: 0.3s;
+    --transition-speed: .3s;
 }
 
 body{
     margin: 0;
     font-family: var(--font-family);
+    font-optical-sizing: auto;
+}
+
+
+/* Generales */
+
+.titulo-seccion{
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--nav-bg-color);
+    font-size: var(--font-size-xxlarge);
+    font-weight: 800;
+    margin-block: 2rem;
+}
+
+.btn-hover:hover{
+        border: 2px solid var(--carousel-text-color);
+        filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.5));
+        transition: .2s;
+    }
+
+/* Navbar */
+
+header{
+    position: fixed;
+    width: 100%;
 }
 
 nav{
@@ -42,6 +68,11 @@ nav{
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    padding-block: 1vh;
+}
+
+nav img{
+    height: 6vh;
 }
 
 nav ul{
@@ -55,9 +86,15 @@ nav ul{
 nav ul li a{
     color: var(--nav-text-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: medium;
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
 }
 
+    nav ul li a:hover{
+        color: var(--text-color-third);
+        transition: var(--transition-speed);
+    }
 
 /* Carrusel de img */
 
@@ -67,9 +104,13 @@ nav ul li a{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    padding-left: 15vh;
 }
 
-    .item-carrusel span, h2, p, button{
+    .item-carrusel span, 
+    .item-carrusel h2, 
+    .item-carrusel p, 
+    .item-carrusel button{
         margin-left: var(--carousel-text-margin-left);
     }
 
@@ -142,6 +183,7 @@ nav ul li a{
         width: 8rem;
         border: 1px solid var(--text-color-third);
         margin-bottom: 2rem;
+        margin-inline: auto;
     }
 
 .tarjetas-productos{
@@ -186,6 +228,8 @@ nav ul li a{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    width: 90%;
+    margin-inline: auto;
 }
 
     #izquierda{
@@ -196,12 +240,23 @@ nav ul li a{
         background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2025/04/TIENDA-042400313-1-scaled-760x420.jpg');
     }
     
-    .item-pantalla-dividida{
+    .item-pantalla-dividida {
+        background-size: cover;
+        background-position: center;
         min-height: 50vh;
         border-radius: 8px;
         padding-left: 2rem;
         align-content: flex-end;
+        overflow: hidden; /* Asegura que la imagen no se salga del contenedor */
+        transition: all var(--transition-speed) ease; /* Transición suave para todos los cambios */
     }
+
+        .item-pantalla-dividida:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+            background-size: 120%;
+            transition-duration: .4s;
+        }
 
     .item-pantalla-dividida span{
         background-color: var(--carousel-text-color);
@@ -210,17 +265,24 @@ nav ul li a{
         color: var(--nav-bg-color);
     }
 
+    .item-pantalla-dividida span:hover{
+        color: var(--carousel-text-color);
+        background-color: var(--nav-bg-color);
+        transition: var(--transition-speed);   
+    }
+
     .item-pantalla-dividida h4{
         color: var(--carousel-text-color);
         font-size: var(--font-size-xlarge);
+        font-weight: 800;
         margin-block: 0.5rem;
     }
 
     .item-pantalla-dividida button{
         margin-bottom: 2rem;
-        padding: 1rem 2rem;
-        background: none;
-        border: 2px solid var(--carousel-text-color);
+        padding: .5rem 1rem;
+        background: var(--nav-bg-color);
+        border: none;    
         margin-left: 0;
     }
 
@@ -435,6 +497,7 @@ nav ul li a{
         border: 1px solid var(--text-color-sec);
         border-radius: 4px;
         background: none;
+        color: var(--carousel-text-color);
     }
 
     .newsletter form button{

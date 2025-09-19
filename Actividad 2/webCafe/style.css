@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 :root{
-    --nav-bg-color: black;
+    --nav-bg-color: rgb(22, 21, 21);
     --nav-text-color: white;
+    --footer-bg-color: #111111;
     --nav-padding: 1rem;
     --font-family: 'Oswald', sans-serif;
     
@@ -23,6 +24,10 @@
 
     /* Presentación */
     --text-color-third: #c7a17a;
+    --text-color-sec: #7c7c7b;
+
+    /* Transiciones */
+    --transition-speed: 0.3s;
 }
 
 body{
@@ -224,3 +229,229 @@ nav ul li a{
         font-size: var(--font-size-medium);
         color: var(--carousel-text-color);
     }
+
+/* Sección: ¿Cuál vas a elegir hoy? */
+
+.cual-vas-a-elegir{
+    padding: 2rem;
+    width: 90%;
+    margin-inline: auto;
+}
+
+.cual-vas-a-elegir .titulos, .titulos h2{
+    text-align: center;
+    margin-block: 2rem;
+    margin-inline: auto;
+    text-transform: uppercase;
+}
+
+.cual-vas-a-elegir .titulos span{
+    color: var(--text-color-third);
+    font-size: var(--font-size-medium);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.cual-vas-a-elegir hr{
+    width: 8rem;
+    border: 1px solid var(--text-color-third);
+    margin-bottom: 2rem;
+    margin: auto;
+}
+
+.textos-cual-vas-a-elegir img{
+    height: 56vh;
+    margin-bottom: 2vh;
+    margin-inline: 2vh;
+}
+
+.textos-cual-vas-a-elegir{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.cual-vas-a-elegir h4{
+    text-transform: uppercase;
+    margin-block: 0;
+    font-size: var(--font-size-large);
+    color: var(--text-color-third);
+}
+
+.cual-vas-a-elegir p{
+    margin-bottom: 3vh;
+    margin-inline: 0;
+    margin-top: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--text-color-sec);
+    font-size: var(--font-size-medium);
+}
+
+#texto-izquierda{
+    text-align: right;
+}
+
+#texto-derecha{
+    text-align: left;
+}
+
+/* Banner: Siempre hay una tienda cerca tuyo */ 
+#banner-tienda-cerca{
+    background-image: url('https://tiendadecafe.com.ar/wp-content/uploads/2021/03/home-tienda.jpg?id=425');
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+    #banner-tienda-cerca .bg-txt span{
+        color: var(--carousel-text-color);
+        font-size: var(--font-size-xxlarge);
+        font-weight: var(--carousel-font-thin);
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    #banner-tienda-cerca .bg-txt h2{
+        color: var(--text-color-third);
+        font-size: var(--font-size-xxxlarge);
+        margin: 0.5rem 0;
+        text-transform: uppercase;
+    }
+
+    #banner-tienda-cerca .bg-txt h4{
+        color: var(--carousel-text-color-sec);
+        font-size: var(--font-size-medium);
+        margin: 0;
+        font-weight: var(--carousel-font-thin);
+    }
+
+    #banner-tienda-cerca .bg-txt button{
+        background: none;
+        border: 2px solid var(--text-color-sec);
+        color: var(--carousel-text-color);
+        padding: 1rem 2rem;
+        margin-inline: 0;
+        font-size: var(--font-size-medium);
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: var(--carousel-font-thin);
+    }
+
+    #banner-tienda-cerca .bg-txt button:hover{
+        border: 2px solid var(--carousel-text-color);
+        transition: var(--transition-speed);   
+    }
+
+    #banner-tienda-cerca .bg-txt button a{
+        text-decoration: none;
+        color: var(--carousel-text-color);
+    }
+
+/* Sección: Footer */
+
+.sec-footer{
+    background-color: var(--footer-bg-color);
+    color: var(--nav-text-color);
+    padding: 2rem;
+    font-size: var(--font-size-small);
+}
+
+.sec-footer #items-footer{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+    .sec-footer #items-footer a{
+        text-decoration: none;
+    }
+
+    .sec-footer #items-footer .logotipo{
+        width: 40vh;
+    }
+
+    .sec-footer #items-footer ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .sec-footer #items-footer ul li span{
+        text-transform: none;
+        color: var(--text-color-sec);
+    }
+
+    .sec-footer #items-footer span{
+        text-transform: uppercase;
+        font-size: var(--font-size-medium);
+        color: var(--text-color-third);
+        margin-bottom: 1rem;
+    }
+
+.sec-footer #items-footer .newsletter{
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+}
+
+    .sec-footer #items-footer .newsletter span{
+        text-align: center;
+    }
+
+    .sec-footer #items-footer .newsletter .rrss{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .sec-footer #items-footer .newsletter .rrss a{
+        color: var(--nav-text-color);
+        font-size: var(--font-size-medium);
+        text-decoration: none;
+        text-align: center;
+        align-content: center;
+        background-color: #7c7c7b;
+        width: 2rem;
+        height: 2rem;
+        
+        border-radius: 45%;
+    }
+
+.newsletter form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+    .newsletter form input{
+        padding: 0.8rem;
+        border: 1px solid var(--text-color-sec);
+        border-radius: 4px;
+        background: none;
+    }
+
+    .newsletter form button{
+        background: var(--text-color-third);
+        border: none;
+        border-radius: 4px;
+        color: var(--nav-bg-color);
+        padding: 0.5rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: bold;
+        margin-inline: 0;
+        max-width: 45%;
+    }
+
+footer p{
+    margin: 0;
+    font-size: var(--font-size-small);
+    color: var(--text-color-sec);
+}

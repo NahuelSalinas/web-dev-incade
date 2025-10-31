@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Tarjetubi</title>
 </head>
+
 <body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Yeezy.com</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#hoodie-img" class="nav-link">Productos</a>
+                </li>
+            </ul>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
     <main>
         <div class="card">
             <div class="img">
-                <img src="https://image.goat.com/transform/v1/attachments/product_template_pictures/images/072/988/479/original/950502_00.png.png?action=crop&width=750" alt="hoodie">
+                <img src="https://image.goat.com/transform/v1/attachments/product_template_pictures/images/072/988/479/original/950502_00.png.png?action=crop&width=750"
+                    alt="hoodie" id="hoodie-img" />
             </div>
+
+            <!-- Botón para cambiar imagen -->
+            <div class="btn-change-container">
+                <button class="btn-change-btn" id="btn-change-back">Anterior</button>
+                <button class="btn-change-btn" id="btn-change-next">Siguiente</button>
+            </div>
+
             <div class="titulo">
                 <span>Yeezy x GAP Dove Hoodie</span>
             </div>
@@ -22,10 +51,35 @@
 
             <div class="txt">
                 <p>
-                    Discover the Yeezy Gap Engineered by Balenciaga Dove Hoodie in 'Black'—a standout collaboration merging fashion prowess and streetwear allure. Crafted from premium material, this hoodie embodies ...
+                    Discover the Yeezy Gap Engineered by Balenciaga Dove Hoodie in
+                    'Black'—a standout collaboration merging fashion prowess and
+                    streetwear allure. Crafted from premium material, this hoodie
+                    embodies...
                 </p>
             </div>
         </div>
     </main>
+
+    <script>
+        // JavaScript para el menú hamburguesa
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Cerrar el menú al hacer clic en un enlace
+        document.querySelectorAll(".nav-link").forEach((n) =>
+            n.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            })
+        );
+    </script>
+
+    <script src="dinamico.js"> </script>
 </body>
+
 </html>

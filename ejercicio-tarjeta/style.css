@@ -1,50 +1,199 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
-    font-family: montserrat;    
+:root {
+    --filtro: blur(16px) saturate(180%);
+    --sombra: 1px 2px 31px 0px rgba(0, 0, 0, 0.24);
+    --primary-color: rgb(32, 101, 211);
+    --text-color: rgb(215, 220, 224);
+    --hoodie-color: rgb(103, 117, 143);
 }
 
-body{
-    background-color: rgb(30, 46, 71);
+* {
+    font-family: montserrat;
 }
 
-.card{
-    max-width: 32vh;
-    background-color: rgb(52, 52, 177);
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-color);
+    transition: all 1s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.card {
+    box-shadow: var(--sombra);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(103, 117, 143, 0.28);
+    backdrop-filter: var(--filtro);
+    border-radius: 2vh;
+    color: var(--text-color);
+    max-width: 38vh;
     padding: 2em;
-    border-radius: 1vh;
     height: 100%;
-    color: aliceblue;
 }
 
-    .card .img{
-        height: 100%;
+.card .img {
+    height: 100%;
+}
+
+.card .img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Título de la tarjeta */
+
+.card .titulo {
+    margin-block: 2vh;
+}
+
+.card .titulo span {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.card p {
+    font-weight: 500;
+}
+
+/* Botón del color de la prenda */
+
+.card .colores button {
+    border-radius: 45%;
+    border: none;
+    padding: 2vh;
+}
+
+#color-picker-gray {
+    background-color: var(--hoodie-color);
+    box-shadow: var(--sombra);
+}
+
+/* Botón de selector de img */
+.btn-change-btn {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 1vh 2vh;
+    margin-top: 2vh;
+    cursor: pointer;
+    border: none;
+}
+
+/* Menú Hamburguesa */
+header {
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: var(--text-color);
+    backdrop-filter: var(--filtro);
+    box-shadow: var(--sombra);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.navbar {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--hoodie-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+}
+
+/* Estilos para el contenido principal */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+/* Media Query */
+
+@media (max-width: 768px) {
+
+    body {
+        background-color: var(--hoodie-color);
+        transition: all 1s ease-in-out;
     }
 
-    .card .img img{
-        object-fit: cover;
+    .card {
+        background-color: var(--text-color);
+        transition: all 1s ease-in-out;
+        color: var(--primary-color);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        backdrop-filter: var(--filtro);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
         width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--sombra);
+        padding: 2rem 0;
+        gap: 0;
     }
 
-    /* Título de la tarjeta */
-
-    .card .titulo{
-        margin-block: 2vh;
+    .nav-menu.active {
+        left: 0;
+        background-color: var(--text-color);
     }
 
-    .card .titulo span{
-        font-weight: 500;
-        font-size: larger;
+    .nav-item {
+        margin: 1.5rem 0;
     }
 
-    /* Botón del color de la prenda */
-
-    .card .colores button{
-        border: none;
-        padding: 1vh;
-        border-radius: 45%;
+    .nav-link {
+        transition: color 0.3s ease;
+        color: var(--hoodie-color);
     }
 
-        #color-picker-gray{
-            background-color: gray;
-        }
+    .btn-change-btn {
+        color: var(--text-color);
+        background-color: var(--primary-color);
+    }
+}

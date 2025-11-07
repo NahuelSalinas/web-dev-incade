@@ -1,0 +1,23 @@
+{
+  "name": "webcafe",
+  "version": "1.0.0",
+  "description": "Proyecto de tienda de café",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev:full": "npm run build && nodemon server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "typescript": "^5.2.2"
+  }
+}
